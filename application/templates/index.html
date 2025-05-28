@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Dashboard!</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #22223b;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 2.5rem;
+            color: #3a86ff;
+            text-shadow: 1px 1px 0 #fff, 2px 2px 0 #bde0fe;
+            animation: wave 1.2s infinite alternate;
+        }
+        @keyframes wave {
+            0% { transform: rotate(-2deg); }
+            100% { transform: rotate(2deg); }
+        }
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            margin: 10px auto;
+            padding: 10px 24px;
+            background: #ffbe0b;
+            color: #22223b;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 8px #bde0fe55;
+            transition: background 0.2s, transform 0.2s;
+        }
+        a:hover {
+            background: #fb5607;
+            color: #fff;
+            transform: scale(1.07) rotate(-2deg);
+        }
+        .logout {
+            background: #ff006e;
+            color: #fff;
+            margin-top: 30px;
+        }
+        .logout:hover {
+            background: #8338ec;
+        }
+        /* Center the logout button */
+        .logout-center {
+            display: flex;
+            justify-content: center;
+        }
+        /* Funny touch */
+        .funny {
+            font-style: italic;
+            color: #4361ee;
+            font-size: 1rem;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>👋 Welcome to your dashboard, {{ username }}!</h1>
+    <p>We're glad you're here..</p>
+    <p class="funny">Did you know? Logging out burns 0.3 calories! 🏃‍♂️</p>
+    <p><a href="/register">Register</a></p>
+    <div class="logout-center">
+        <a href="/logout" class="logout">Logout (but we'll miss you!)</a>
+    </div>
+</body>
+</html>

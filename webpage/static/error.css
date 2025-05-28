@@ -1,0 +1,42 @@
+body {
+            background: #f8d7da;
+            color: #721c24;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .error-box {
+            display: inline-block;
+            background: #fff;
+            border: 2px solid #f5c6cb;
+            border-radius: 10px;
+            padding: 30px 50px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .error-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            animation: shake 0.5s;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-10px); }
+            80% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+        .retry-btn {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: #f5c6cb;
+            border: none;
+            border-radius: 5px;
+            color: #721c24;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .retry-btn:hover {
+            background: #f1b0b7;
+        }

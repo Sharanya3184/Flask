@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Register 🚀</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+                font-family: 'Segoe UI', 'Arial', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            form {
+                background: #fff;
+                padding: 2.5rem 2rem;
+                border-radius: 18px;
+                box-shadow: 0 8px 32px rgba(60,60,120,0.12);
+                min-width: 320px;
+                max-width: 350px;
+                border: 2px solid #a5b4fc;
+                position: relative;
+            }
+            form:before {
+                content: "📝";
+                font-size: 2.5rem;
+                position: absolute;
+                top: -1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #fff;
+                border-radius: 50%;
+                padding: 0.2em 0.4em;
+                border: 2px solid #a5b4fc;
+            }
+            label {
+                font-weight: 600;
+                color: #3730a3;
+                margin-bottom: 0.2em;
+                display: inline-block;
+            }
+            input[type="text"], input[type="password"], select {
+                width: 100%;
+                padding: 0.6em;
+                margin-top: 0.2em;
+                margin-bottom: 1em;
+                border: 1.5px solid #a5b4fc;
+                border-radius: 8px;
+                font-size: 1em;
+                transition: border 0.2s;
+            }
+            input[type="text"]:focus, input[type="password"]:focus, select:focus {
+                border-color: #6366f1;
+                outline: none;
+                background: #f0f9ff;
+            }
+            input[type="submit"] {
+                background: linear-gradient(90deg, #6366f1 60%, #818cf8 100%);
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                padding: 0.7em 1.5em;
+                font-size: 1.1em;
+                font-weight: bold;
+                cursor: pointer;
+                box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+                transition: background 0.2s, transform 0.1s;
+            }
+            input[type="submit"]:hover {
+                background: linear-gradient(90deg, #818cf8 60%, #6366f1 100%);
+                transform: scale(1.04) rotate(-2deg);
+            }
+            select {
+                background: #f8fafc;
+            }
+            /* Funny touch: emoji hints */
+            label[for="fname"]::after {
+                content: " 😎";
+            }
+            label[for="lname"]:first-of-type::after {
+                content: " 🔒";
+            }
+            label[for="lname"]:last-of-type::after {
+                content: " 🔑";
+            }
+            label[for="gender"]::after {
+                content: " 🧑‍🤝‍🧑";
+            }
+            /* Flash messages styling */
+            .flash-message {
+                background: #fef08a;
+                color: #b45309;
+                border: 1px solid #fde68a;
+                border-radius: 6px;
+                padding: 0.7em 1em;
+                margin-top: 1em;
+                font-size: 1em;
+                display: flex;
+                align-items: center;
+                gap: 0.5em;
+            }
+            .flash-message::before {
+                content: "⚡";
+                font-size: 1.2em;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="/register" method="POST">
+        <label for="fname">Username :</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="lname">Password :</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+         <label for="lname">Confirm Password :</label><br>
+        <input type="password" id="password" name="confirm_password" required><br><br>
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender" required>
+            <option value="">--Select Gender--</option>
+            <option value="male">Male 👨</option>
+            <option value="female">Female 👩</option>
+            <option value="other">Other 🦄</option>
+            <option value="prefer_not_to_say">Prefer not to say 🤫</option>
+        </select><br><br>
+        <input type="submit" value="Submit 🚀">
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        
+        </form> 
+    </body>
+</html>

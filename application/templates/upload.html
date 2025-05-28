@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Your File 📤😄</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 8px #ff4e50;
+        }
+        form {
+            background: #fffbe7;
+            padding: 2rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        label {
+            font-size: 1.1rem;
+            color: #ff4e50;
+            margin-bottom: 0.5rem;
+        }
+        input[type="file"] {
+            border: 2px dashed #f9d423;
+            padding: 0.5rem;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background: linear-gradient(90deg, #ff4e50 0%, #f9d423 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.7rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+            box-shadow: 0 2px 8px rgba(249, 212, 35, 0.2);
+        }
+        input[type="submit"]:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 4px 16px rgba(255, 78, 80, 0.2);
+        }
+        .emoji {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .footer {
+            margin-top: 2rem;
+            color: #040404;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="emoji">📁✨</div>
+    <h1>Upload Your File <span>😎</span></h1>
+    <form action="/uploads" method="POST" enctype="multipart/form-data">
+        <label for="file">Choose a file to upload <span>🤔</span></label>
+        <input type="file" name="file" id="file"><br>
+        <input type="submit" value="Upload 🚀">
+    </form>
+    <div class="footer">Don't worry, your files are in safe hands! 🦸‍♂️</div>
+</body>
+</html>
